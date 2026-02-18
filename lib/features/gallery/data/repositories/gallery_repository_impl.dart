@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import '../../domain/entities/image_entity.dart';
-import '../../domain/repositories/i_gallery_repository.dart';
-import '../models/image_model.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:picsum_gallery/features/gallery/domain/entities/image_entity.dart';
+import 'package:picsum_gallery/features/gallery/domain/repositories/i_gallery_repository.dart';
+import 'package:picsum_gallery/features/gallery/data/models/image_model.dart';
+import 'package:picsum_gallery/core/constants/app_constants.dart';
 
 class GalleryRepositoryImpl implements IGalleryRepository {
   final Dio _dio;

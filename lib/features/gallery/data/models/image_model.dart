@@ -1,4 +1,4 @@
-import '../../domain/entities/image_entity.dart';
+import 'package:picsum_gallery/features/gallery/domain/entities/image_entity.dart';
 
 class ImageModel extends ImageEntity {
   const ImageModel({

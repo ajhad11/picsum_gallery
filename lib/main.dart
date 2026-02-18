@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'core/theme/app_theme.dart';
-import 'features/gallery/presentation/screens/gallery_screen.dart';
+import 'package:picsum_gallery/core/theme/app_theme.dart';
+import 'package:picsum_gallery/features/gallery/presentation/screens/gallery_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

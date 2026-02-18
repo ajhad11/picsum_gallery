@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../domain/entities/image_entity.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:picsum_gallery/features/gallery/domain/entities/image_entity.dart';
+import 'package:picsum_gallery/core/constants/app_constants.dart';
 
 class ImageCard extends StatelessWidget {
   final ImageEntity image;
@@ -47,7 +47,7 @@ class ImageCard extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
-                  Colors.black.withOpacity(0.7),
+                  Colors.black.withAlpha(178), // 0.7 * 255
                 ],
               ),
             ),

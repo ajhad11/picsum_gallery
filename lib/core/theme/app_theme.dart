@@ -11,7 +11,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: primaryColor,
         brightness: Brightness.light,
-        background: backgroundColor,
+        surface: backgroundColor,
       ),
       textTheme: GoogleFonts.plusJakartaSansTextTheme(),
       appBarTheme: const AppBarTheme(

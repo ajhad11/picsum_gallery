@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../constants/app_constants.dart';
+import 'package:picsum_gallery/core/constants/app_constants.dart';
 
 class DioClient {
   static Dio get instance {
