@@ -1,29 +1,60 @@
-# Picsum Gallery Flutter App
+# Picsum Gallery - Production Flutter App
 
-A premium Flutter application that fetches and displays beautiful images from the Picsum API using **Riverpod** for state management and **Dio** for networking.
+A production-ready Flutter application that fetches and displays high-quality images from the [Picsum API](https://picsum.photos/v2/list). Built with a focus on **Clean Architecture**, **Riverpod**, and **Premium UI/UX**.
 
-## ✨ Features
+## 📸 Screenshots
+*(Add screenshots here)*
 
-- **Clean UI**: Modern, glassmorphism-inspired design with premium typography.
-- **Sliver Architecture**: Smooth scrolling with a floating app bar.
-- **Efficient Image Loading**: Uses `cached_network_image` for smooth performance and caching.
-- **State Management**: Robust state handling with `flutter_riverpod`.
-- **Error Handling**: Graceful error states and retry mechanisms.
-- **Responsive**: Adapts to different screen sizes.
+## 🏗️ Architecture: Clean Architecture
+This project follows **Clean Architecture** principles to ensure scalability, maintainability, and testability. The codebase is divided into three main layers:
+
+### 1. Domain Layer (The Core)
+Contains the business logic and rules. It is completely independent of other layers.
+- **Entities**: Simple Dart classes representing the data (e.g., `ImageEntity`).
+- **Repositories (Interfaces)**: Defines the contract for data operations.
+
+### 2. Data Layer
+Responsible for data retrieval from external sources (API, Database).
+- **Models**: Extensions of entities with JSON serialization logic (`ImageModel`).
+- **Repositories (Implementations)**: Concrete implementations of the domain repositories using `Dio`.
+
+### 3. Presentation Layer
+Contains everything related to the UI and state management.
+- **Providers**: Riverpod providers managing the app state.
+- **Screens**: Full pages (e.g., `GalleryScreen`).
+- **Widgets**: Reusable UI components (e.g., `ImageCard`).
+
+---
+
+## 🚀 State Management: Riverpod
+We use **Riverpod** for state management because:
+- **Compile-time safety**: Catches errors early.
+- **No BuildContext dependency**: Clean separation of logic and UI.
+- **Testability**: Extremely easy to mock providers for unit testing.
+- **Scalability**: Handles complex async states (Loading, Data, Error) natively via `AsyncValue`.
+
+---
 
 ## 🛠️ Tech Stack
+- **Networking**: `Dio` (Intercepts, BaseOptions, Error handling).
+- **Image Handling**: `cached_network_image` for smooth performance and offline caching.
+- **UI Architecture**: `CustomScrollView` with `SliverGrid` for a professional feel.
+- **Theming**: Custom Material 3 theme with Google Fonts (Plus Jakarta Sans).
 
-- **Framework**: Flutter
-- **State Management**: Riverpod
-- **Networking**: Dio
-- **UI Components**: Shimmer, Google Fonts, Cached Network Image
-- **Model Layer**: Equatable (for value comparison)
+---
 
-## 🚀 Getting Started
+## ⚙️ Setup & Installation
 
-1. **Clone the repository** (after you push it to your GitHub):
+### Prerequisites
+- Flutter SDK (Stable channel)
+- Android Studio / VS Code
+- Git
+
+### Installation Steps
+1. **Clone the repository**:
    ```bash
-   git clone <your-repo-link>
+   git clone https://github.com/AjhadK/picsum_gallery.git
+   cd picsum_gallery
    ```
 
 2. **Install dependencies**:
@@ -31,34 +62,47 @@ A premium Flutter application that fetches and displays beautiful images from th
    flutter pub get
    ```
 
-3. **Run the app**:
+3. **Run the application**:
    ```bash
    flutter run
    ```
 
-## 📂 Project Structure
+---
 
-```text
-lib/
-├── core/               # App-wide constants and themes
-├── features/
-│   └── gallery/        # Gallery feature module
-│       ├── data/       # Models and Repositories
-│       └── presentation/ # Providers, Screens, and Widgets
-└── main.dart           # App entry point
+## 📦 Building for Release
+
+### Android
+```bash
+flutter build apk --release
+# OR
+flutter build appbundle --release
 ```
 
-## 📤 How to Upload to GitHub
+### iOS
+```bash
+flutter build ios --release
+```
 
-If you haven't uploaded this project yet, follow these steps:
+---
 
-1. **Create a new repository** on GitHub (do not initialize with README).
-2. **Open your terminal** in the project directory.
-3. **Run the following commands**:
-   ```bash
-   git remote add origin https://github.com/AjhadK/<your-repo-name>.git
-   git branch -M main
-   git push -u origin main
-   ```
+## 📤 Git & GitHub Preparation
 
-Developed with ❤️ using Antigravity AI.
+### Initialized Git
+The project has been initialized with a standard Flutter `.gitignore`.
+
+### Initial Commit
+```bash
+git add .
+git commit -m "Initial commit - Flutter Picsum Gallery App"
+```
+
+### Pushing to GitHub
+```bash
+git remote add origin https://github.com/AjhadK/picsum_gallery.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+Developed with ❤️ by **AjhadK** using **Antigravity AI**.

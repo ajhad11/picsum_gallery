@@ -1,19 +1,25 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../data/gallery_repository.dart';
-import '../../data/picsum_image_model.dart';
+import '../../data/repositories/gallery_repository_impl.dart';
+import '../../domain/entities/image_entity.dart';
+import '../../domain/repositories/i_gallery_repository.dart';
+
+import '../../../core/network/dio_client.dart';
 
 // Provider for Dio instance
-final dioProvider = Provider<Dio>((ref) => Dio());
+final dioProvider = Provider<Dio>((ref) => DioClient.instance);
 
 // Provider for the repository
-final galleryRepositoryProvider = Provider<GalleryRepository>((ref) {
+final galleryRepositoryProvider = Provider<IGalleryRepository>((ref) {
   final dio = ref.watch(dioProvider);
-  return GalleryRepository(dio);
+  return GalleryRepositoryImpl(dio);
 });
 
-// FutureProvider to fetch the list of images
-final galleryImagesProvider = FutureProvider.autoDispose<List<PicsumImage>>((ref) async {
+// Paginating Image List Provider
+final galleryImagesProvider = FutureProvider.family<List<ImageEntity>, int>((ref, page) async {
   final repository = ref.watch(galleryRepositoryProvider);
-  return repository.fetchImages();
+  return repository.fetchImages(page: page, limit: 30);
 });
+
+// Current Page Provider
+final currentPageProvider = StateProvider<int>((ref) => 1);
