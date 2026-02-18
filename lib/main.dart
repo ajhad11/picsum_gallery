@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'features/gallery/presentation/screens/gallery_screen.dart';
 
 void main() {
@@ -20,11 +21,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2D31FA),
+          seedColor: const Color(0xFF6366F1),
           brightness: Brightness.light,
         ),
         useMaterial3: true,
-        fontFamily: 'Inter', // Optional: requires font setup, fallback to system font
+        textTheme: GoogleFonts.plusJakartaSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
       ),
       home: const GalleryScreen(),
     );
