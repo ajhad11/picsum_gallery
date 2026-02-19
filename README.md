@@ -2,6 +2,15 @@
 
 A production-ready Flutter application that fetches and displays high-quality images from the [Picsum API](https://picsum.photos/v2/list). Built with a focus on **Clean Architecture**, **Riverpod**, and **Premium UI/UX**.
 
+## ✨ Key Features
+- **Infinite Scrolling**: Automatically loads more images as you scroll using Riverpod's `AsyncNotifier`.
+- **Advanced Search**: Real-time filtering by author name with a smooth UI transition.
+- **Orientation Filtering**: Interactive filter chips to view only Landscape, Portrait, or Square images.
+- **Sorting System**: Organize images by ID or Author Name via a premium Bottom Sheet.
+- **Favorites System**: Save images locally using `shared_preferences` - data persists even after app restart!
+- **Premium UX**: Includes Hero animations, Shimmer loading effects, and smooth haptic feedback.
+- **Clean Architecture**: Decoupled layers (Domain, Data, Presentation) for maximum testability.
+
 ## 📸 Screenshots
 *(Add screenshots here)*
 
